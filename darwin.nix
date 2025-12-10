@@ -1,4 +1,11 @@
 { pkgs, ... }: {
+    # ==========================================================
+  # USER DEFINITION (Fixes "absolute path" error)
+  # ==========================================================
+  users.users.damiancrespi = {
+    name = "damiancrespi";
+    home = "/Users/damiancrespi";
+  };
   # ==========================================================
   # SYSTEM CONFIGURATION (Your "Configuraciones" List)
   # ==========================================================
