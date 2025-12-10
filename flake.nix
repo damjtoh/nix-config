@@ -10,6 +10,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # 3. Home Manager (User / Dotfiles Management)
+    home-manager.users.damiancrespi.home.homeDirectory = "/Users/damiancrespi";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
