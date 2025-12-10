@@ -47,7 +47,7 @@
     settings = {
       user = {
         name = "Damian Crespi";
-        email = "your.email@example.com"; 
+        email = "damian.crespi@gmail.com"; 
       };
       init.defaultBranch = "main";
       pull.rebase = true;
