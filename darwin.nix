@@ -37,6 +37,10 @@
     home = "/Users/damiancrespi";
   };
 
+  # REQUIRED: Tells nix-darwin who owns Homebrew and system defaults
+  # during the new root-based activation process.
+  nix-darwin.system.primaryUser = "damiancrespi";
+
   # ==========================================================
   # FONTS
   # ==========================================================
