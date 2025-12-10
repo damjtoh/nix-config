@@ -1,11 +1,13 @@
 { pkgs, ... }: {
-  # --- FIX: Allow Unfree Packages (VS Code, Slack, etc.) ---
+  # FIX: Allow Unfree Packages
   nixpkgs.config.allowUnfree = true;
+
+  # FIX: Disable nix-darwin's management of Nix (required for Determinate Systems)
+  nix.enable = false;
 
   # ==========================================================
   # SYSTEM CONFIGURATION
   # ==========================================================
-  
   system.defaults = {
     dock = {
       orientation = "right";
@@ -96,7 +98,6 @@
     mkdir -p /Users/damiancrespi/Sites
   '';
 
-  nix.settings.experimental-features = "nix-command flakes";
   security.pam.services.sudo_local.touchIdAuth = true; 
   system.stateVersion = 4;
 }

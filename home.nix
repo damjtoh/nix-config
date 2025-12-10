@@ -43,11 +43,11 @@
 
   programs.git = {
     enable = true;
-    # FIX: New syntax for Git settings
-    extraConfig = {
+    # FIX: Renamed 'extraConfig' to 'settings'
+    settings = {
       user = {
         name = "Damian Crespi";
-        email = "your.email@example.com"; # TODO: Check this!
+        email = "your.email@example.com"; 
       };
       init.defaultBranch = "main";
       pull.rebase = true;
@@ -56,7 +56,6 @@
 
   programs.vscode = {
     enable = true;
-    # FIX: Extensions moved to profiles.default.extensions
     profiles.default.extensions = with pkgs.vscode-extensions; [
       esbenp.prettier-vscode
       dbaeumer.vscode-eslint
