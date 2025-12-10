@@ -30,16 +30,15 @@
   };
 
   # ==========================================================
-  # USER DEFINITION (Fixes the "primaryUser" error)
+  # USER DEFINITION
   # ==========================================================
   users.users.damiancrespi = {
     name = "damiancrespi";
     home = "/Users/damiancrespi";
   };
 
-  # REQUIRED: Tells nix-darwin who owns Homebrew and system defaults
-  # during the new root-based activation process.
-  nix-darwin.system.primaryUser = "damiancrespi";
+  # CORRECTED: No prefix here. This is the new option.
+  system.primaryUser = "damiancrespi";
 
   # ==========================================================
   # FONTS
@@ -96,10 +95,9 @@
   '';
 
   # Essential Nix settings
-  # services.nix-daemon.enable = true;  <-- REMOVED (Deprecated)
   nix.settings.experimental-features = "nix-command flakes";
   
-  # UPDATED TouchID setting
+  # TouchID setting
   security.pam.services.sudo_local.touchIdAuth = true; 
   
   system.stateVersion = 4;
