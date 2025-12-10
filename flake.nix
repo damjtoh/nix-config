@@ -19,7 +19,7 @@
     # TODO: CHANGE THIS TO YOUR ACTUAL USERNAME
     user = "damiancrespi"; 
     # TODO: CHANGE THIS TO YOUR ACTUAL HOSTNAME (run `hostname -s`)
-    hostname = "damian-mac-studio";
+    hostname = "Damians-Mac-Studio";
     
     system = "aarch64-darwin"; # Apple Silicon
   in {
