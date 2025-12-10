@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   home.stateVersion = "23.11";
 
-  # --- FIX: Explicitly define user info ---
   home.username = "damiancrespi";
   home.homeDirectory = "/Users/damiancrespi";
 
@@ -44,10 +43,12 @@
 
   programs.git = {
     enable = true;
-    userName = "Damian Crespi";
-    userEmail = "your.email@example.com"; # TODO: Check this!
-    
+    # FIX: New syntax for Git settings
     extraConfig = {
+      user = {
+        name = "Damian Crespi";
+        email = "your.email@example.com"; # TODO: Check this!
+      };
       init.defaultBranch = "main";
       pull.rebase = true;
     };
@@ -55,7 +56,8 @@
 
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
+    # FIX: Extensions moved to profiles.default.extensions
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       esbenp.prettier-vscode
       dbaeumer.vscode-eslint
       bradlc.vscode-tailwindcss

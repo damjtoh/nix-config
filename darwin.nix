@@ -1,4 +1,7 @@
 { pkgs, ... }: {
+  # --- FIX: Allow Unfree Packages (VS Code, Slack, etc.) ---
+  nixpkgs.config.allowUnfree = true;
+
   # ==========================================================
   # SYSTEM CONFIGURATION
   # ==========================================================
@@ -37,7 +40,6 @@
     home = "/Users/damiancrespi";
   };
 
-  # CORRECTED: No prefix here. This is the new option.
   system.primaryUser = "damiancrespi";
 
   # ==========================================================
@@ -94,11 +96,7 @@
     mkdir -p /Users/damiancrespi/Sites
   '';
 
-  # Essential Nix settings
   nix.settings.experimental-features = "nix-command flakes";
-  
-  # TouchID setting
   security.pam.services.sudo_local.touchIdAuth = true; 
-  
   system.stateVersion = 4;
 }
